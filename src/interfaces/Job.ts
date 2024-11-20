@@ -10,4 +10,4 @@ export interface Job {
       description: string;
       contactEmail: string;
       contactPhone: string;
-}
+};
