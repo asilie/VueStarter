@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import type { Job } from '../interfaces/Job.ts';
+import type { Job } from '@/interfaces/Job.ts';
 
 const props = defineProps<{job: Job;}>();
 
