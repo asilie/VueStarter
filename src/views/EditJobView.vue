@@ -46,11 +46,11 @@ const handleSubmit = async() => {
     }
     try {
     const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
-    toast.success('Job Updated Successfully')
+    toast.success('Pet Updated Successfully')
     router.push(`/jobs/${response.data.id}`)
   } catch (error) {
-    console.error('Error putting job', error);
-    toast.error('Job Was Not Updated')
+    console.error('Error putting pet', error);
+    toast.error('Pet Was Not Updated')
   }
 }
 
@@ -69,7 +69,7 @@ onMounted(async() => {
         form.company.contactEmail = state.job.company.contactEmail;
         form.company.contactPhone = state.job.company.contactPhone;
     } catch (error) {
-        console.error('Error fetching job', error);
+        console.error('Error fetching pet', error);
     } finally {
         state.isLoading = false;
     }
@@ -78,17 +78,17 @@ onMounted(async() => {
 </script>
 
 <template>
-    <section class="bg-green-50">
+   <section class="bg-green-50">
       <div class="container m-auto max-w-2xl py-24">
         <div
           class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
         >
           <form @submit.prevent = "handleSubmit">
-            <h2 class="text-3xl text-center font-semibold mb-6">Edit Job</h2>
+            <h2 class="text-3xl text-center font-semibold mb-6">Add Pet</h2>
 
             <div class="mb-4">
               <label for="type" class="block text-gray-700 font-bold mb-2"
-                >Job Type</label
+                >Pet Type</label
               >
               <select v-model = "form.type"
                 id="type"
@@ -96,23 +96,23 @@ onMounted(async() => {
                 class="border rounded w-full py-2 px-3"
                 required
               >
-                <option value="Full-Time">Full-Time</option>
-                <option value="Part-Time">Part-Time</option>
-                <option value="Remote">Remote</option>
-                <option value="Internship">Internship</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value="Fish">Fish</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
             <div class="mb-4">
               <label class="block text-gray-700 font-bold mb-2"
-                >Job Listing Name</label
+                >Pet Name</label
               >
               <input v-model = "form.title"
                 type="text"
                 id="name"
                 name="name"
                 class="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. Mr. Floof"
                 required
               />
             </div>
@@ -127,13 +127,13 @@ onMounted(async() => {
                 name="description"
                 class="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="Add any job duties, expectations, requirements, etc"
+                placeholder="Add any medications, likes/dislikes, compatibilities, etc"
               ></textarea>
             </div>
 
             <div class="mb-4">
               <label for="type" class="block text-gray-700 font-bold mb-2"
-                >Salary</label
+                >Price</label
               >
               <select v-model = "form.salary"
                 id="salary"
@@ -164,23 +164,23 @@ onMounted(async() => {
                 id="location"
                 name="location"
                 class="border rounded w-full py-2 px-3 mb-2"
-                placeholder="Company Location"
+                placeholder="Pet Location"
                 required
               />
             </div>
 
-            <h3 class="text-2xl mb-5">Company Info</h3>
+            <h3 class="text-2xl mb-5">Owner Info</h3>
 
             <div class="mb-4">
               <label for="company" class="block text-gray-700 font-bold mb-2"
-                >Company Name</label
+                >Owner Name</label
               >
               <input v-model = "form.company.name"
                 type="text"
                 id="company"
                 name="company"
                 class="border rounded w-full py-2 px-3"
-                placeholder="Company Name"
+                placeholder="Owner Name"
               />
             </div>
 
@@ -188,14 +188,14 @@ onMounted(async() => {
               <label 
                 for="company_description"
                 class="block text-gray-700 font-bold mb-2"
-                >Company Description</label
+                >Owner Description</label
               >
               <textarea v-model = "form.company.description"
                 id="company_description"
                 name="company_description"
                 class="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="What does your company do?"
+                placeholder="Why are you selling this pet?"
               ></textarea>
             </div>
 
@@ -234,7 +234,7 @@ onMounted(async() => {
                 class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Update Job
+                Add Pet
               </button>
             </div>
           </form>

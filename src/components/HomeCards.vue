@@ -10,25 +10,25 @@ import { RouterLink } from 'vue-router';
           <Card>
             <h2 class="text-2xl font-bold">For Developers</h2>
             <p class="mt-2 mb-4">
-              Browse our Vue jobs and start your career today
+              Browse our pets and find your fur-baby today
             </p>
             <RouterLink
               to="/jobs"
               class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
-              Browse Jobs
+              Browse Pets
             </RouterLink>
         </Card>
           <Card bgColor = "bg-teal-100">
             <h2 class="text-2xl font-bold">For Employers</h2>
             <p class="mt-2 mb-4">
-              List your job to find the perfect developer for the role
+              List your pet to find the perfect pet-parent 
             </p>
             <RouterLink
               to="/jobs/add"
               class="inline-block bg-teal-500 text-white rounded-lg px-4 py-2 hover:bg-teal-600"
             >
-              Add Job
+              Add Pet
             </RouterLink>
           </Card>
         </div>

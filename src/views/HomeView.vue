@@ -5,7 +5,7 @@ import JobListings from '@/components/JobListings.vue'
 </script>
 
 <template>
-    <Hero />
+    <Hero title = "Become a Pet Owner" subtitle = "Find the pet that fits your needs"/>
     <HomeCards />
     <JobListings :limit = "3" :showButton = "true"/>
 </template>

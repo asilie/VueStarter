@@ -20,15 +20,15 @@ const state = reactive({
 
 const deleteJob = async() => {
   try{
-    const confirm = window.confirm('Are you sure you want to delete this job?');
+    const confirm = window.confirm('Are you sure you want to delete this pet?');
     if (confirm) {
       const response = await axios.delete(`/api/jobs/${jobId}`);
-    toast.success('Job Deleted Successfully')
+    toast.success('Pet Deleted Successfully')
     router.push('/jobs')
     }
   } catch (error) {
-    console.error('Error fetching job', error);
-    toast.error('Job Was Not Deleted')
+    console.error('Error fetching pet', error);
+    toast.error('Pet Was Not Deleted')
   } 
 }
 
@@ -37,7 +37,7 @@ onMounted(async() => {
     const response = await axios.get(`/api/jobs/${jobId}`);
     state.job = response.data;
   } catch (error) {
-    console.error('Error fetching job', error);
+    console.error('Error fetching pet', error);
   } finally {
     state.isLoading = false;
   }
@@ -114,12 +114,12 @@ onMounted(async() => {
               <RouterLink
                 :to="`/jobs/edit/${state.job.id}`"
                 class="bg-teal-500 hover:bg-teal-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
-                >Edit Job</RouterLink
+                >Edit Pet</RouterLink
               >
               <button @click = "deleteJob"
                 class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
-                Delete Job
+                Delete Pet
               </button>
             </div>
           </aside>

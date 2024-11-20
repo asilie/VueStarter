@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router';
           to="/jobs"
           class="text-teal-500 hover:text-teal-600 flex items-center"
         >
-          <i class="pi pi-arrow-circle-left mr-3"></i> Back to Job Listings
+          <i class="pi pi-arrow-circle-left mr-3"></i> Back to Pet Listings
         </RouterLink>
       </div>
     </section>
