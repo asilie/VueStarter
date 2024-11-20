@@ -85,34 +85,6 @@
       }
     },
     {
-      "id": "78f2",
-      "title": "asdfas",
-      "type": "Full-Time",
-      "description": "asdfasd",
-      "salary": "$80K - $90K",
-      "location": "asdfasd",
-      "company": {
-        "name": "asdfasdf",
-        "description": "asdfasdf",
-        "contactEmail": "asdfasdf@adfasd",
-        "contactPhone": "asdfsadf"
-      }
-    },
-    {
-      "id": "956a",
-      "title": "asdfas",
-      "type": "Full-Time",
-      "description": "asdfasd",
-      "salary": "$80K - $90K",
-      "location": "asdfasd",
-      "company": {
-        "name": "asdfasdf",
-        "description": "asdfasdf",
-        "contactEmail": "asdfasdf@adfasd",
-        "contactPhone": "asdfsadf"
-      }
-    },
-    {
       "id": "b9ee",
       "title": "adfd",
       "type": "Full-Time",
