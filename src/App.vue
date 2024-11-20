@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
+import HomeCards from '@/components/HomeCards.vue'
 
 </script>
 
@@ -9,5 +10,6 @@ import Hero from '@/components/Hero.vue'
 
 <NavBar />
 <Hero />
+<HomeCards />
 
 </template>
