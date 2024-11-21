@@ -1,4 +1,4 @@
-export interface Pet {
+interface Pet {
     id: number;
     type: string;
     name: string;
@@ -11,3 +11,7 @@ export interface Pet {
       contactEmail: string;
       contactPhone: string;
 }};
+
+type PetForm = Omit<Pet, 'id'>;
+
+export type {Pet, PetForm};

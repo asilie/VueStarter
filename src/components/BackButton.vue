@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
      <section>
       <div class="container m-auto py-6 px-6">
         <RouterLink
-          to="/jobs"
+          to="/pets"
           class="text-teal-500 hover:text-teal-600 flex items-center"
         >
           <i class="pi pi-arrow-circle-left mr-3"></i> Back to Pet Listings

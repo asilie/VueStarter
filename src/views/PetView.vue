@@ -5,6 +5,7 @@ import axios from 'axios';
 import {reactive, onMounted} from 'vue'
 import { useRoute, RouterLink, useRouter } from 'vue-router';
 import {useToast} from 'vue-toastification'
+import type { Pet } from '@/interfaces/Pet';
 
 
 const route = useRoute();
@@ -13,8 +14,8 @@ const toast = useToast();
 
 const petId = route.params.id;
 
-const state = reactive({
-    pet: {},
+const state: {pet: Pet, isLoading: boolean} = reactive({
+    pet: {} as Pet,
     isLoading: true
 })
 
@@ -22,9 +23,9 @@ const deletePet = async() => {
   try{
     const confirm = window.confirm('Are you sure you want to delete this pet?');
     if (confirm) {
-      await axios.delete(`/api/jobs/${petId}`);
+      await axios.delete(`/api/pets/${petId}`);
     toast.success('Pet Deleted Successfully')
-    router.push('/jobs')
+    router.push('/pets')
     }
   } catch (error) {
     console.error('Error fetching pet', error);
@@ -34,7 +35,7 @@ const deletePet = async() => {
 
 onMounted(async() => {
   try{
-    const response = await axios.get(`/api/jobs/${petId}`);
+    const response = await axios.get(`/api/pets/${petId}`);
     state.pet = response.data;
   } catch (error) {
     console.error('Error fetching pet', error);
@@ -118,7 +119,7 @@ onMounted(async() => {
             <div class="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 class="text-xl font-bold mb-6">Manage Pet</h3>
               <RouterLink
-                :to="`/jobs/edit/${state.pet.id}`"
+                :to="`/pets/edit/${state.pet.id}`"
                 class="bg-teal-500 hover:bg-teal-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                 >Edit Pet</RouterLink
               >

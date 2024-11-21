@@ -55,7 +55,7 @@ const toggleFullDescription = () => {
                   {{pet.location}}
                 </div>
                 <RouterLink
-                  :to = "`/jobs/${pet.id}`"
+                  :to = "`/pets/${pet.id}`"
                   class="h-[36px] bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                 >
                   Read More

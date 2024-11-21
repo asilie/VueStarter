@@ -4,12 +4,13 @@ import axios from 'axios';
 import router from '@/router';
 import {useToast} from 'vue-toastification'
 import {useRoute} from 'vue-router'
+import type { Pet, PetForm } from '@/interfaces/Pet';
 
 const route = useRoute()
 
 const petId = route.params.id;
 
-const form = reactive({
+const form: PetForm = reactive({
     type: 'Cat',
     name: '',
     description: '',
@@ -23,8 +24,8 @@ const form = reactive({
     }
 })
 
-const state = reactive({
-    pet: {},
+const state: { pet: PetForm, isLoading: boolean }= reactive({
+    pet: {} as PetForm,
     isLoading: true
 })
 
@@ -44,9 +45,9 @@ const handleSubmit = async() => {
         }
     }
     try {
-    const response = await axios.put(`/api/jobs/${petId}`, updatedJob);
+    const response = await axios.put(`/api/pets/${petId}`, updatedJob);
     toast.success('Pet Updated Successfully')
-    router.push(`/jobs/${response.data.id}`)
+    router.push(`/pets/${response.data.id}`)
   } catch (error) {
     console.error('Error putting pet', error);
     toast.error('Pet Was Not Updated')
@@ -55,7 +56,7 @@ const handleSubmit = async() => {
 
 onMounted(async() => {
     try{
-        const response = await axios.get(`/api/jobs/${petId}`)
+        const response = await axios.get(`/api/pets/${petId}`)
         state.pet = response.data;
         // Populate inputs
         form.type = state.pet.type;

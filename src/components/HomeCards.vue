@@ -13,7 +13,7 @@ import { RouterLink } from 'vue-router';
               Browse our pets and find your fur-baby today
             </p>
             <RouterLink
-              to="/jobs"
+              to="/pets"
               class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
               Browse Pets
@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router';
               List your pet to find the perfect pet-parent 
             </p>
             <RouterLink
-              to="/jobs/add"
+              to="/pets/add"
               class="inline-block bg-teal-500 text-white rounded-lg px-4 py-2 hover:bg-teal-600"
             >
               Add Pet

@@ -37,9 +37,9 @@ const handleSubmit = async() => {
         }
     }
     try {
-    const response = await axios.post(`/api/jobs`, newPet);
+    const response = await axios.post(`/api/pets`, newPet);
     toast.success('Pet Added Successfully')
-    router.push(`/jobs/${response.data.id}`)
+    router.push(`/pets/${response.data.id}`)
   } catch (error) {
     console.error('Error posting pet', error);
     toast.error('Pet Was Not Added')

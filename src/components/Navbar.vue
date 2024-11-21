@@ -2,7 +2,7 @@
 import logo from '@/assets/img/logo.png'
 import { RouterLink, useRoute } from 'vue-router';
 
-const isActiveLink = (routePath) => {
+const isActiveLink = (routePath: string) => {
   const route = useRoute();
   return route.path === routePath;
 }
@@ -31,13 +31,13 @@ const isActiveLink = (routePath) => {
                   >Home</RouterLink
                 >
                 <RouterLink
-                  to="/jobs"
-                  :class="[isActiveLink('/jobs') ? 'bg-teal-900': 'hover:bg-gray-900 hover:text-white', 'text-white', 'rounded-md', 'px-3', 'py-2']"
+                  to="/pets"
+                  :class="[isActiveLink('/pets') ? 'bg-teal-900': 'hover:bg-gray-900 hover:text-white', 'text-white', 'rounded-md', 'px-3', 'py-2']"
                   >Pets</RouterLink
                 >
                 <RouterLink
-                  to="/jobs/add"
-                  :class="[isActiveLink('/jobs/add') ? 'bg-teal-900': 'hover:bg-gray-900 hover:text-white', 'text-white', 'rounded-md', 'px-3', 'py-2']"
+                  to="/pets/add"
+                  :class="[isActiveLink('/pets/add') ? 'bg-teal-900': 'hover:bg-gray-900 hover:text-white', 'text-white', 'rounded-md', 'px-3', 'py-2']"
                   >Add Pet</RouterLink
                 >
               </div>

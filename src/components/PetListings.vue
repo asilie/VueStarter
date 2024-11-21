@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, defineProps, onMounted } from 'vue';
-import JobListing from '@/components/JobListing.vue';
+import JobListing from '@/components/PetListing.vue';
 import { RouterLink } from 'vue-router';
 import axios from 'axios';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
@@ -20,7 +20,7 @@ defineProps({
 
 onMounted(async() => {
   try{
-    const response = await axios.get('/api/jobs');
+    const response = await axios.get('/api/pets');
     state.pets = response.data;
   } catch (error) {
     console.error('Error fetching pets', error);
@@ -51,7 +51,7 @@ onMounted(async() => {
 
 <section v-if = "showButton" class="m-auto max-w-lg my-10 px-6">
       <RouterLink
-        to="/jobs"
+        to="/pets"
         class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
         >View All Pets</RouterLink
       >
