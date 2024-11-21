@@ -6,7 +6,7 @@ import axios from 'axios';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 
 const state = reactive({
-  jobs: [],
+  pets: [],
   isLoading: true
 });
 
@@ -21,9 +21,9 @@ defineProps({
 onMounted(async() => {
   try{
     const response = await axios.get('/api/jobs');
-    state.jobs = response.data;
+    state.pets = response.data;
   } catch (error) {
-    console.error('Error fetching jobs', error);
+    console.error('Error fetching pets', error);
   } finally {
     state.isLoading = false;
   }
@@ -43,7 +43,7 @@ onMounted(async() => {
 
 
         <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <JobListing v-for = "job in state.jobs.slice(0, limit || state.jobs.length)" :key = "job.id" :job = "job" />
+    <JobListing v-for = "pet in state.pets.slice(0, limit || state.pets.length)" :key = "pet.id" :pet = "pet" />
 
     </div>
 </div>

@@ -1108,6 +1108,23 @@ video {
   outline-offset: 2px;
 }
 
+.pet-card {
+  display: flex;
+  justify-content: space-between; /* Space between content and image */
+  align-items: center; /* Align items vertically */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-image {
+  max-width: 30%; /* Restrict the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
 @media (min-width: 640px) {
   .sm\:px-6 {
     padding-left: 1.5rem;

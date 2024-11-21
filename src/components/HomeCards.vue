@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router';
       <div class="container-xl lg:container m-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
           <Card>
-            <h2 class="text-2xl font-bold">For Developers</h2>
+            <h2 class="text-2xl font-bold">For Pet Seekers</h2>
             <p class="mt-2 mb-4">
               Browse our pets and find your fur-baby today
             </p>
@@ -20,7 +20,7 @@ import { RouterLink } from 'vue-router';
             </RouterLink>
         </Card>
           <Card bgColor = "bg-teal-100">
-            <h2 class="text-2xl font-bold">For Employers</h2>
+            <h2 class="text-2xl font-bold">For Pet Owners</h2>
             <p class="mt-2 mb-4">
               List your pet to find the perfect pet-parent 
             </p>

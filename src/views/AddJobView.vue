@@ -6,36 +6,34 @@ import {useToast} from 'vue-toastification'
 
 const form = reactive({
     type: 'Cat',
-    title: '',
+    name: '',
     description: '',
-    salary: '',
+    price: '',
     location: '',
-    company: {
+    owner: {
         name: '',
-        description: '',
         contactEmail: '',
         contactPhone: ''
     }
-})
+});
 
 const toast = useToast();
 
 const handleSubmit = async() => {
-    const newJob = {
-        title: form.title,
+    const newPet = {
+        name: form.name,
         type: form.type,
         description: form.description,
-        salary: form.salary,
+        price: form.price,
         location: form.location,
-        company: {
-            name: form.company.name,
-            description: form.company.description,
-            contactEmail: form.company.contactEmail,
-            contactPhone: form.company.contactPhone
+        owner: {
+            name: form.owner.name,
+            contactEmail: form.owner.contactEmail,
+            contactPhone: form.owner.contactPhone
         }
     }
     try {
-    const response = await axios.post(`/api/jobs`, newJob);
+    const response = await axios.post(`/api/jobs`, newPet);
     toast.success('Pet Added Successfully')
     router.push(`/jobs/${response.data.id}`)
   } catch (error) {
@@ -47,7 +45,7 @@ const handleSubmit = async() => {
 </script>
 
 <template>
-    <section class="bg-green-50">
+    <section class="bg-teal-50">
       <div class="container m-auto max-w-2xl py-24">
         <div
           class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
@@ -68,6 +66,9 @@ const handleSubmit = async() => {
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
                 <option value="Fish">Fish</option>
+                <option value="Hamster">Hamster</option>
+                <option value="Rabbit">Rabbit</option>
+                <option value="Bird">Bird</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -76,7 +77,7 @@ const handleSubmit = async() => {
               <label class="block text-gray-700 font-bold mb-2"
                 >Pet Name</label
               >
-              <input v-model = "form.title"
+              <input v-model = "form.name"
                 type="text"
                 id="name"
                 name="name"
@@ -104,23 +105,23 @@ const handleSubmit = async() => {
               <label for="type" class="block text-gray-700 font-bold mb-2"
                 >Price</label
               >
-              <select v-model = "form.salary"
-                id="salary"
-                name="salary"
+              <select v-model = "form.price"
+                id="price"
+                name="price"
                 class="border rounded w-full py-2 px-3"
                 required
               >
-                <option value="Under $50K">under $50K</option>
-                <option value="$50K - $60K">$50 - $60K</option>
-                <option value="$60K - $70K">$60 - $70K</option>
-                <option value="$70K - $80K">$70 - $80K</option>
-                <option value="$80K - $90K">$80 - $90K</option>
-                <option value="$90K - $100K">$90 - $100K</option>
-                <option value="$100K - $125K">$100 - $125K</option>
-                <option value="$125K - $150K">$125 - $150K</option>
-                <option value="$150K - $175K">$150 - $175K</option>
-                <option value="$175K - $200K">$175 - $200K</option>
-                <option value="Over $200K">Over $200K</option>
+                <option value="Under $50">under $50</option>
+                <option value="$50 - $60">$50 - $60</option>
+                <option value="$60 - $70">$60 - $70</option>
+                <option value="$70 - $80">$70 - $80</option>
+                <option value="$80 - $90">$80 - $90</option>
+                <option value="$90 - $100">$90 - $100</option>
+                <option value="$100 - $125">$100 - $125</option>
+                <option value="$125 - $150">$125 - $150</option>
+                <option value="$150 - $175">$150 - $175</option>
+                <option value="$175 - $200">$175 - $200</option>
+                <option value="Over $200">Over $200</option>
               </select>
             </div>
 
@@ -141,31 +142,16 @@ const handleSubmit = async() => {
             <h3 class="text-2xl mb-5">Owner Info</h3>
 
             <div class="mb-4">
-              <label for="company" class="block text-gray-700 font-bold mb-2"
+              <label for="owner" class="block text-gray-700 font-bold mb-2"
                 >Owner Name</label
               >
-              <input v-model = "form.company.name"
+              <input v-model = "form.owner.name"
                 type="text"
-                id="company"
-                name="company"
+                id="owner"
+                name="owner"
                 class="border rounded w-full py-2 px-3"
                 placeholder="Owner Name"
               />
-            </div>
-
-            <div class="mb-4">
-              <label 
-                for="company_description"
-                class="block text-gray-700 font-bold mb-2"
-                >Owner Description</label
-              >
-              <textarea v-model = "form.company.description"
-                id="company_description"
-                name="company_description"
-                class="border rounded w-full py-2 px-3"
-                rows="4"
-                placeholder="Why are you selling this pet?"
-              ></textarea>
             </div>
 
             <div class="mb-4">
@@ -174,7 +160,7 @@ const handleSubmit = async() => {
                 class="block text-gray-700 font-bold mb-2"
                 >Contact Email</label
               >
-              <input v-model = "form.company.contactEmail"
+              <input v-model = "form.owner.contactEmail"
                 type="email"
                 id="contact_email"
                 name="contact_email"
@@ -189,12 +175,12 @@ const handleSubmit = async() => {
                 class="block text-gray-700 font-bold mb-2"
                 >Contact Phone</label
               >
-              <input v-model = "form.company.contactPhone"
+              <input v-model = "form.owner.contactPhone"
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
                 class="border rounded w-full py-2 px-3"
-                placeholder="Optional phone for applicants"
+                placeholder="Phone for applicants"
               />
             </div>
 
