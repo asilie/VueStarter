@@ -1,5 +1,5 @@
-<script setup>
-import {reactive } from 'vue';
+<script setup lang="ts">
+import {reactive, ref } from 'vue';
 import axios from 'axios';
 import router from '@/router';
 import {useToast} from 'vue-toastification'
@@ -8,6 +8,7 @@ const form = reactive({
     type: 'Cat',
     name: '',
     description: '',
+    imageURL: '',
     price: '',
     location: '',
     owner: {
@@ -17,6 +18,8 @@ const form = reactive({
     }
 });
 
+const imageError = ref(false);
+
 const toast = useToast();
 
 const handleSubmit = async() => {
@@ -24,6 +27,7 @@ const handleSubmit = async() => {
         name: form.name,
         type: form.type,
         description: form.description,
+        imageURL: form.imageURL,
         price: form.price,
         location: form.location,
         owner: {
@@ -41,6 +45,14 @@ const handleSubmit = async() => {
     toast.error('Pet Was Not Added')
   }
 }
+
+const resetError = () => {
+  imageError.value = false;
+}
+
+const handleImageError = () => {
+      imageError.value = true; // Set error to true if the image fails to load
+    }
 
 </script>
 
@@ -86,6 +98,36 @@ const handleSubmit = async() => {
                 required
               />
             </div>
+
+            <div class="mb-4">
+              <label class="block text-gray-700 font-bold mb-2"
+                >Pet Image</label
+              >
+              <input v-model = "form.imageURL"
+              @change="resetError"
+                type="text"
+                id="name"
+                name="name"
+                class="border rounded w-full py-2 px-3 mb-2"
+                placeholder="Enter image URL"
+                required
+              />
+            </div>
+
+            <div v-if="form.imageURL" class="pet-card flex mb-4 border-gray-300 rounded-lg p-4 flex justify-center items-center">
+                
+                <img
+        :src="form.imageURL"
+        alt="Preview"
+        class="pet-image h-40 w-auto object-cover max-w-[50%] rounded-lg"
+        @error="handleImageError"/>
+              </div>
+
+    <!-- Error Message -->
+    <p v-if="imageError" class="text-red-500 mt-2 text-sm">
+      Unable to load the image. Please check the URL.
+    </p>
+
             <div class="mb-4">
               <label
                 for="description"

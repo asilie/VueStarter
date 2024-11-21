@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { reactive, defineProps, onMounted } from 'vue';
 import JobListing from '@/components/JobListing.vue';
 import { RouterLink } from 'vue-router';

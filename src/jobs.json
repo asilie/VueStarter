@@ -1,7 +1,7 @@
 {
   "jobs": [
     {
-      "id": 1,
+      "id": "1",
       "type": "Dog",
       "name": "Buddy",
       "description": "Buddy is a cheerful and loving golden retriever who thrives in an active household. He enjoys long walks, fetching tennis balls, and is known for his gentle nature around children and other pets. Buddy is fully vaccinated and has basic obedience training.",
@@ -15,7 +15,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "type": "Cat",
       "name": "Whiskers",
       "description": "Whiskers is a playful and curious tabby cat with a big personality. She loves exploring her surroundings, chasing after toys, and curling up in sunny spots for naps. She's litter-trained, vaccinated, and ideal for a home looking for a lively yet affectionate feline companion.",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "type": "Parrot",
       "name": "Polly",
       "description": "Polly is an intelligent and entertaining parrot who loves interacting with people. She knows over a dozen phrases, enjoys mimicking sounds, and thrives in an environment where she gets plenty of attention. Polly has vibrant plumage and comes with her own spacious cage.",
@@ -43,21 +43,20 @@
       }
     },
     {
-      "id": 4,
-      "type": "Rabbit",
       "name": "Snowball",
+      "type": "Rabbit",
       "description": "Snowball is a sweet and docile rabbit with soft, fluffy white fur that's perfect for petting. She enjoys munching on fresh vegetables, hopping around playfully, and is litter-box trained. Snowball is great for families or individuals looking for a calm and cuddly pet.",
-      "imageURL": "https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "price": "$50 - $60",
+      "price": "$60 - $70",
       "location": "Chicago, IL",
       "owner": {
         "name": "Emma Brown",
         "contactEmail": "emma.brown@yahoo.com",
         "contactPhone": "555-345-6789"
-      }
+      },
+      "id": "4"
     },
     {
-      "id": 5,
+      "id": "5",
       "type": "Hamster",
       "name": "Nibbles",
       "description": "Nibbles is a tiny, energetic hamster who loves to run on her wheel and burrow in her bedding. She's easy to care for and perfect for first-time pet owners or families with young children. Nibbles is healthy, friendly, and comes with her cage and supplies.",
@@ -71,7 +70,7 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "type": "Fish",
       "name": "Bubbles",
       "description": "Bubbles is a stunning betta fish with a mix of blue and red hues that shimmer in the light. He's low-maintenance and ideal for anyone seeking a peaceful aquatic pet. Bubbles thrives in a clean tank with minimal setup and enjoys exploring plants and decorations.",
@@ -85,7 +84,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "type": "Turtle",
       "name": "Speedy",
       "description": "Speedy is a relaxed and easy-going turtle who enjoys basking under his heat lamp and swimming in his tank. He's low-maintenance and perfect for a home that wants a pet requiring minimal attention. Speedy is healthy, friendly, and comes with his tank and supplies.",
@@ -99,7 +98,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "type": "Dog",
       "name": "Max",
       "description": "Max is a loyal and highly intelligent German shepherd. He's well-trained in basic and advanced commands, making him a great choice for families or individuals seeking a dependable and protective companion. Max enjoys outdoor activities, and his calm demeanor makes him easy to manage.",
@@ -113,7 +112,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "type": "Cat",
       "name": "Luna",
       "description": "Luna is a sleek black cat with striking green eyes that seem to glow in the dark. She's independent yet affectionate, often seeking out her owner for cuddles and playtime. Luna has a calm and elegant demeanor, making her a perfect addition to a quiet home.",
@@ -126,5 +125,5 @@
         "contactPhone": "555-890-1234"
       }
     }
-  ] 
+  ]
 }

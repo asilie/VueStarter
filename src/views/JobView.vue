@@ -2,7 +2,7 @@
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import BackButton from '@/components/BackButton.vue';
 import axios from 'axios';
-import {reactive, onMounted, PropType} from 'vue'
+import {reactive, onMounted} from 'vue'
 import { useRoute, RouterLink, useRouter } from 'vue-router';
 import {useToast} from 'vue-toastification'
 
@@ -22,7 +22,7 @@ const deletePet = async() => {
   try{
     const confirm = window.confirm('Are you sure you want to delete this pet?');
     if (confirm) {
-      const response = await axios.delete(`/api/jobs/${petId}`);
+      await axios.delete(`/api/jobs/${petId}`);
     toast.success('Pet Deleted Successfully')
     router.push('/jobs')
     }

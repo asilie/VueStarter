@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {reactive, onMounted } from 'vue';
 import axios from 'axios';
 import router from '@/router';
@@ -7,24 +7,24 @@ import {useRoute} from 'vue-router'
 
 const route = useRoute()
 
-const jobId = route.params.id;
+const petId = route.params.id;
 
 const form = reactive({
-    type: 'Full-Time',
-    title: '',
+    type: 'Cat',
+    name: '',
     description: '',
-    salary: '',
+    price: '',
+    imageURL: '',
     location: '',
-    company: {
+    owner: {
         name: '',
-        description: '',
         contactEmail: '',
         contactPhone: ''
     }
 })
 
 const state = reactive({
-    job: {},
+    pet: {},
     isLoading: true
 })
 
@@ -32,20 +32,19 @@ const toast = useToast();
 
 const handleSubmit = async() => {
     const updatedJob = {
-        title: form.title,
+        name: form.name,
         type: form.type,
         description: form.description,
-        salary: form.salary,
+        price: form.price,
         location: form.location,
-        company: {
-            name: form.company.name,
-            description: form.company.description,
-            contactEmail: form.company.contactEmail,
-            contactPhone: form.company.contactPhone
+        owner: {
+            name: form.owner.name,
+            contactEmail: form.owner.contactEmail,
+            contactPhone: form.owner.contactPhone
         }
     }
     try {
-    const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
+    const response = await axios.put(`/api/jobs/${petId}`, updatedJob);
     toast.success('Pet Updated Successfully')
     router.push(`/jobs/${response.data.id}`)
   } catch (error) {
@@ -56,18 +55,17 @@ const handleSubmit = async() => {
 
 onMounted(async() => {
     try{
-        const response = await axios.get(`/api/jobs/${jobId}`)
-        state.job = response.data;
+        const response = await axios.get(`/api/jobs/${petId}`)
+        state.pet = response.data;
         // Populate inputs
-        form.type = state.job.type;
-        form.title = state.job.title;
-        form.description = state.job.description;
-        form.salary = state.job.salary;
-        form.location = state.job.location;
-        form.company.name = state.job.company.name;
-        form.company.description = state.job.company.description;
-        form.company.contactEmail = state.job.company.contactEmail;
-        form.company.contactPhone = state.job.company.contactPhone;
+        form.type = state.pet.type;
+        form.name = state.pet.name;
+        form.description = state.pet.description;
+        form.price = state.pet.price;
+        form.location = state.pet.location;
+        form.owner.name = state.pet.owner.name;
+        form.owner.contactEmail = state.pet.owner.contactEmail;
+        form.owner.contactPhone = state.pet.owner.contactPhone;
     } catch (error) {
         console.error('Error fetching pet', error);
     } finally {
@@ -84,7 +82,7 @@ onMounted(async() => {
           class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
         >
           <form @submit.prevent = "handleSubmit">
-            <h2 class="text-3xl text-center font-semibold mb-6">Add Pet</h2>
+            <h2 class="text-3xl text-center font-semibold mb-6">Edit Pet</h2>
 
             <div class="mb-4">
               <label for="type" class="block text-gray-700 font-bold mb-2"
@@ -96,9 +94,12 @@ onMounted(async() => {
                 class="border rounded w-full py-2 px-3"
                 required
               >
-                <option value="Cat">Cat</option>
+              <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
                 <option value="Fish">Fish</option>
+                <option value="Hamster">Hamster</option>
+                <option value="Rabbit">Rabbit</option>
+                <option value="Bird">Bird</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -107,7 +108,7 @@ onMounted(async() => {
               <label class="block text-gray-700 font-bold mb-2"
                 >Pet Name</label
               >
-              <input v-model = "form.title"
+              <input v-model = "form.name"
                 type="text"
                 id="name"
                 name="name"
@@ -135,23 +136,23 @@ onMounted(async() => {
               <label for="type" class="block text-gray-700 font-bold mb-2"
                 >Price</label
               >
-              <select v-model = "form.salary"
-                id="salary"
-                name="salary"
+              <select v-model = "form.price"
+                id="price"
+                name="price"
                 class="border rounded w-full py-2 px-3"
                 required
               >
-                <option value="Under $50K">under $50K</option>
-                <option value="$50K - $60K">$50 - $60K</option>
-                <option value="$60K - $70K">$60 - $70K</option>
-                <option value="$70K - $80K">$70 - $80K</option>
-                <option value="$80K - $90K">$80 - $90K</option>
-                <option value="$90K - $100K">$90 - $100K</option>
-                <option value="$100K - $125K">$100 - $125K</option>
-                <option value="$125K - $150K">$125 - $150K</option>
-                <option value="$150K - $175K">$150 - $175K</option>
-                <option value="$175K - $200K">$175 - $200K</option>
-                <option value="Over $200K">Over $200K</option>
+              <option value="Under $50">under $50</option>
+                <option value="$50 - $60">$50 - $60</option>
+                <option value="$60 - $70">$60 - $70</option>
+                <option value="$70 - $80">$70 - $80</option>
+                <option value="$80 - $90">$80 - $90</option>
+                <option value="$90 - $100">$90 - $100</option>
+                <option value="$100 - $125">$100 - $125</option>
+                <option value="$125 - $150">$125 - $150</option>
+                <option value="$150 - $175">$150 - $175</option>
+                <option value="$175 - $200">$175 - $200</option>
+                <option value="Over $200">Over $200</option>
               </select>
             </div>
 
@@ -172,31 +173,16 @@ onMounted(async() => {
             <h3 class="text-2xl mb-5">Owner Info</h3>
 
             <div class="mb-4">
-              <label for="company" class="block text-gray-700 font-bold mb-2"
+              <label for="owner" class="block text-gray-700 font-bold mb-2"
                 >Owner Name</label
               >
-              <input v-model = "form.company.name"
+              <input v-model = "form.owner.name"
                 type="text"
-                id="company"
-                name="company"
+                id="owner"
+                name="owner"
                 class="border rounded w-full py-2 px-3"
                 placeholder="Owner Name"
               />
-            </div>
-
-            <div class="mb-4">
-              <label 
-                for="company_description"
-                class="block text-gray-700 font-bold mb-2"
-                >Owner Description</label
-              >
-              <textarea v-model = "form.company.description"
-                id="company_description"
-                name="company_description"
-                class="border rounded w-full py-2 px-3"
-                rows="4"
-                placeholder="Why are you selling this pet?"
-              ></textarea>
             </div>
 
             <div class="mb-4">
@@ -205,7 +191,7 @@ onMounted(async() => {
                 class="block text-gray-700 font-bold mb-2"
                 >Contact Email</label
               >
-              <input v-model = "form.company.contactEmail"
+              <input v-model = "form.owner.contactEmail"
                 type="email"
                 id="contact_email"
                 name="contact_email"
@@ -220,7 +206,7 @@ onMounted(async() => {
                 class="block text-gray-700 font-bold mb-2"
                 >Contact Phone</label
               >
-              <input v-model = "form.company.contactPhone"
+              <input v-model = "form.owner.contactPhone"
                 type="tel"
                 id="contact_phone"
                 name="contact_phone"
@@ -234,7 +220,7 @@ onMounted(async() => {
                 class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Pet
+                Edit Pet
               </button>
             </div>
           </form>
