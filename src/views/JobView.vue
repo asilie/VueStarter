@@ -54,18 +54,28 @@ onMounted(async() => {
         <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
           <main>
             <div
-              class="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
+              class="flex flex-row justify-between bg-white p-6 rounded-lg shadow-md text-center md:text-left"
             >
+            <div>
               <div class="text-gray-500 mb-4">{{state.pet.type}}</div>
               <h1 class="text-3xl font-bold mb-4">{{state.pet.name}}</h1>
               <div
-                class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
+                class="text-gray-500 mb-4 flex align-middle justify-center justify-start"
               >
                 <i
                   class="pi pi-map-marker text-xl text-orange-800 mr-2"
                 ></i>
-                <p class="text-orange-800">{{state.pet.location}}</p>
+                <p class="text-orange-800 text-nowrap">{{state.pet.location}}</p>
               </div>
+
+            </div>
+  
+              <div class="flex align-middle justify-end">
+                <img :src = "state.pet.imageURL" :alt = "`Image of ${state.pet.name}`" class = "pet-image max-w-[60%] rounded-lg"/>
+
+              </div>
+              
+
             </div>
 
             <div class="bg-white p-6 rounded-lg shadow-md mt-6">
