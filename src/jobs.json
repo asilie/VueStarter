@@ -19,6 +19,7 @@
       "type": "Cat",
       "name": "Whiskers",
       "description": "Whiskers is a playful and curious tabby cat with a big personality. She loves exploring her surroundings, chasing after toys, and curling up in sunny spots for naps. She's litter-trained, vaccinated, and ideal for a home looking for a lively yet affectionate feline companion.",
+      "imageURL": "https://images.pexels.com/photos/2930204/pexels-photo-2930204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "$125 - $150",
       "location": "New York, NY",
       "owner": {
@@ -32,6 +33,7 @@
       "type": "Parrot",
       "name": "Polly",
       "description": "Polly is an intelligent and entertaining parrot who loves interacting with people. She knows over a dozen phrases, enjoys mimicking sounds, and thrives in an environment where she gets plenty of attention. Polly has vibrant plumage and comes with her own spacious cage.",
+      "imageURL": "https://images.pexels.com/photos/1059823/pexels-photo-1059823.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "Over $200",
       "location": "Miami, FL",
       "owner": {
@@ -45,6 +47,7 @@
       "type": "Rabbit",
       "name": "Snowball",
       "description": "Snowball is a sweet and docile rabbit with soft, fluffy white fur that's perfect for petting. She enjoys munching on fresh vegetables, hopping around playfully, and is litter-box trained. Snowball is great for families or individuals looking for a calm and cuddly pet.",
+      "imageURL": "https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "$50 - $60",
       "location": "Chicago, IL",
       "owner": {
@@ -58,6 +61,7 @@
       "type": "Hamster",
       "name": "Nibbles",
       "description": "Nibbles is a tiny, energetic hamster who loves to run on her wheel and burrow in her bedding. She's easy to care for and perfect for first-time pet owners or families with young children. Nibbles is healthy, friendly, and comes with her cage and supplies.",
+      "imageURL": "https://images.pexels.com/photos/15373308/pexels-photo-15373308/free-photo-of-cute-hamster-feeding-in-a-mug.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "Under $50",
       "location": "Seattle, WA",
       "owner": {
@@ -71,6 +75,7 @@
       "type": "Fish",
       "name": "Bubbles",
       "description": "Bubbles is a stunning betta fish with a mix of blue and red hues that shimmer in the light. He's low-maintenance and ideal for anyone seeking a peaceful aquatic pet. Bubbles thrives in a clean tank with minimal setup and enjoys exploring plants and decorations.",
+      "imageURL": "https://images.pexels.com/photos/325045/pexels-photo-325045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "Under $50",
       "location": "Austin, TX",
       "owner": {
@@ -84,6 +89,7 @@
       "type": "Turtle",
       "name": "Speedy",
       "description": "Speedy is a relaxed and easy-going turtle who enjoys basking under his heat lamp and swimming in his tank. He's low-maintenance and perfect for a home that wants a pet requiring minimal attention. Speedy is healthy, friendly, and comes with his tank and supplies.",
+      "imageURL": "https://images.pexels.com/photos/3387169/pexels-photo-3387169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "$70 - $80",
       "location": "San Diego, CA",
       "owner": {
@@ -97,6 +103,7 @@
       "type": "Dog",
       "name": "Max",
       "description": "Max is a loyal and highly intelligent German shepherd. He's well-trained in basic and advanced commands, making him a great choice for families or individuals seeking a dependable and protective companion. Max enjoys outdoor activities, and his calm demeanor makes him easy to manage.",
+      "imageURL": "https://images.pexels.com/photos/333083/pexels-photo-333083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "Over $200",
       "location": "Houston, TX",
       "owner": {
@@ -110,6 +117,7 @@
       "type": "Cat",
       "name": "Luna",
       "description": "Luna is a sleek black cat with striking green eyes that seem to glow in the dark. She's independent yet affectionate, often seeking out her owner for cuddles and playtime. Luna has a calm and elegant demeanor, making her a perfect addition to a quiet home.",
+      "imageURL": "https://images.pexels.com/photos/29408186/pexels-photo-29408186/free-photo-of-black-cat-in-dramatic-low-light-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "price": "$175 - $200",
       "location": "San Francisco, CA",
       "owner": {

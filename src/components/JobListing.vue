@@ -31,7 +31,7 @@ const toggleFullDescription = () => {
                 </div>
                 
 
-                <img :src = "pet.imageURL" :alt = "`Image of ${pet.name}`" class = "pet-image max-w-[50%] rounded-lg"/>
+                <img :src = "pet.imageURL" :alt = "`Image of ${pet.name}`" class = "pet-image h-40 w-auto object-cover max-w-[50%] rounded-lg"/>
               </div>
 
              
